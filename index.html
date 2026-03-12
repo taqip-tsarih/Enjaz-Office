@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        مكتب انجاز - ابو عبدالله للتعقيب | الرئيسية
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+   <style>
+    :root {
+        --primary-color: #1a5d1a;
+        --primary-gradient: linear-gradient(135deg, #1a5d1a 0%, #2d8a2d 100%);
+        --accent-gold: #d4af37;
+        --white: #ffffff;
+        --bg-light: #f0f2f5;
+        --text-main: #2c3e50;
+    }
+
+    body {
+        font-family: 'Tajawal', sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-main);
+        margin: 0; padding: 0;
+        line-height: 1.7;
+    }
+
+    header {
+    background-image: url('samo.png');
+    background-size: cover;          /* تغطية كامل المساحة */
+    background-position: center center; /* توسيط الصورة */
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;              /* زيادة الـ padding قليلاً لتتناسب مع أبعاد صورتك */
+    position: relative;
+    clip-path: ellipse(120% 100% at 50% 0%); /* تحسين شكل الـ clip-path ليناسب الصورة */
+}
+
+/* طبقة تعتيم لضمان وضوح النص فوق الصورة */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* تعتيم 50% */
+    z-index: 1;
+}
+
+header h1, header p {
+    color: #ffffff; /* اللون الأبيض ليبرز فوق الصورة */
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* إضافة ظل للنص لزيادة الوضوح */
+}
+
+
+
+    header h1 { font-weight: 800; font-size: 2.2rem; margin: 0; }
+    header p { font-size: 1.1rem; opacity: 0.9; margin-top: 10px; }
+
+    .container { max-width: 850px; margin: -50px auto 40px; padding: 0 20px; position: relative; z-index: 10; }
+
+    /* قسم المقالة */
+    .intro-article {
+        background: var(--white);
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        margin-bottom: 30px;
+        border-bottom: 4px solid var(--accent-gold);
+    }
+
+    .intro-article h2 { color: var(--primary-color); font-size: 1.5rem; margin-top: 0; }
+    .intro-article p { font-size: 1.05rem; color: #555; text-align: justify; }
+
+    .highlight-box {
+        background: linear-gradient(45deg, #004d00);
+        border: 1px solid #ffeeba;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 30px;
+        font-weight: 800;
+        border-radius: 15px;
+        font-size: 1.3rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.03); }
+        100% { transform: scale(1); }
+    }
+
+    /* تعديل البطاقات لتصبح أكثر دمجاً */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 15px; /* تقليل المسافة بين البطاقات */
+    margin-top: 20px;
+}
+
+.service-item {
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    padding: 15px; /* تقليل الـ padding */
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+    .service-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--primary-color);
+    }
+
+    .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .service-title {
+        font-weight: 700;
+        color: var(--primary-color);
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+
+    /* بطاقة التواصل */
+    .contact-card {
+        background: var(--primary-gradient);
+        color: white;
+        border-radius: 25px;
+        padding: 40px 20px;
+        text-align: center;
+        margin-top: 50px;
+        box-shadow: 0 15px 35px rgba(26, 93, 26, 0.3);
+    }
+
+    .contact-card h3 { font-size: 1.8rem; margin: 0 0 15px; }
+
+    .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        background: #25d366;
+        color: white;
+        padding: 15px 40px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.4rem;
+        font-weight: 800;
+        margin-top: 20px;
+        transition: 0.3s;
+        border: 3px solid rgba(255,255,255,0.2);
+    }
+
+    .whatsapp-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    footer {
+    background-color: #004d00;
+    color: #ffffff;
+    text-align: center;
+    padding: 60px 20px 30px;
+    margin-top: 50px;
+    /* هذا هو سر الشكل الجذاب: انحناء من الأعلى */
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    /* ظل خفيف يعطي إيحاء بأن الفوتر طافٍ قليلاً */
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* إضافة خط ذهبي رفيع في الأعلى لزيادة الفخامة */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 3px;
+    background: #ffd700;
+    border-radius: 5px;
+}
+
+footer h4 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: #ffd700 !important;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #ffffff !important;
+}
+
+
+    /* تنسيق الأكورديون الجديد */
+.accordion-item {
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.accordion-header {
+    padding: 15px;
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    color: #555;
+    text-align: right;
+}
+
+/* توسيط عناوين الأقسام */
+.services-section-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin: 40px 0 20px;
+}
+
+  /* النموذج */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--primary-color); }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-family: inherit; }
+        .submit-btn { width: 100%; padding: 15px; background: var(--primary-color); color: white; border: none; border-radius: 10px; font-weight: 800; cursor: pointer; transition: 0.3s; font-size: 1.1rem; }
+        .submit-btn:hover { background: #134613; transform: translateY(-2px); }
+
+        /* معلومات التواصل */
+        .contact-info { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+        .contact-info a { color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 1.2rem; display: block; margin: 10px 0; }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+</head>
+<body>
+<div class="top-bar">
+    <span>📍 نخدم جميع مناطق المملكة</span>
+    <span>📞 966555832509+</span>
+</div>
+<style>
+.top-bar { background: #004d00; color: white; text-align: center; font-size: 0.8rem; padding: 5px; font-weight: bold; }
+</style>
+
+<header>
+    <h1>🇸🇦 مكتب إنجاز للخدمات والتعقيب 🇸🇦</h1>
+    <p>بإدارة أبو عبدالله | ثقة وإنجاز يفوق التوقعات</p>
+</header>
+
+<div class="container">
+    
+    <div class="intro-article">
+        <h2>حلولنا المتكاملة لإنجاز معاملاتكم</h2>
+        <p>
+            في ظل التحول الرقمي السريع الذي تشهده المملكة العربية السعودية، أصبحت المعاملات الحكومية تتطلب دقة عالية وإلماماً تاماً بالأنظمة المحدثة عبر منصات قوى، أبشر، ومساند. هنا يأتي دورنا في <strong>مكتب أبو عبدالله للخدمات والتعقيب</strong>، لنكون الجسر الذي يربطكم بالإنجاز السريع والمضمون. نحن لا نكتفي بتقديم الخدمة، بل نضمن لك الالتزام التام بالأنظمة واللوائح، مع تقديم حلول مبتكرة لتجاوز كافة التحديات الإجرائية.
+        </p>
+    </div>
+
+    <div class="highlight-box">
+        🛑 الدفع بعد الإنجاز لضمان حقوقكم 🛑
+    </div>
+<div class="contact-card">
+        <h3>هل لديك معاملة صعبة؟</h3>
+        <p>لا تشيل هم.. أبو عبدالله ينجزها لك</p>
+        <a href="https://wa.me/966555832509" class="whatsapp-btn">
+             تواصل واتساب الآن 📱
+        </a>
+        <div style="margin-top: 20px; font-weight: bold;">
+            رقم التواصل: 966555832509
+        </div>
+    </div>
+
+</div>
+    <h2 class="services-section-title">خدماتنا المتميزة</h2>
+
+   <div class="services-container" id="services">
+    <div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-passport"></i></span>
+    <div class="service-title">استخراج تأشيرات مهنية فردية</div>
+    <p>استخراج سريع لتأشيرات المكتفي عبر مساند وقوى مع ضمان القبول.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-user-slash"></i></span>
+    <div class="service-title">إلغاء بلاغ الهروب</div>
+    <p>إلغاء بلاغات التغيب عن العمل بالطرق النظامية وتصحيح وضع العامل.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-plane-departure"></i></span>
+    <div class="service-title">خروج نهائي (إقامة منتهية)</div>
+    <p>إصدار الخروج النهائي حتى لو كانت الإقامة منتهية وبدون غرامات.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-arrows-rotate"></i></span>
+    <div class="service-title">نقل كفالة مهني</div>
+    <p>نقل كفالة الموظفين والعمالة المهنية للمؤسسات عبر منصة قوى.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-user-check"></i></span>
+    <div class="service-title">نقل كفالة فردي</div>
+    <p>نقل كفالة العمالة المنزلية والسائقين بسلاسة تامة.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-user-pen"></i></span>
+    <div class="service-title">تعديل المهن</div>
+    <p>تعديل المهن للفردي والمهني لتطابق الواقع الوظيفي ونظام العمل.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-percent"></i></span>
+    <div class="service-title">تخفيض المقابل المالي</div>
+    <p>حلول نظامية لتقليل مبالغ المقابل المالي المتراكمة على المنشآت.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-building-shield"></i></span>
+    <div class="service-title">نقل تأمينات مع السجل</div>
+    <p>ربط وتحديث بيانات التأمينات الاجتماعية مع السجلات التجارية.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-file-invoice-dollar"></i></span>
+    <div class="service-title">تصفير وتقديم الضرائب</div>
+    <p>تقديم الإقرارات الضريبية وتصفير المبالغ عبر هيئة الزكاة.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-triangle-exclamation"></i></span>
+    <div class="service-title">تصفير غرامات الضبط</div>
+    <p>إسقاط غرامات التأخير والمخالفات الميدانية عبر الاعتراضات.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-circle-check"></i></span>
+    <div class="service-title">إنجاز مشهود له</div>
+    <p>نضمن لك المتابعة الدقيقة لكل معاملة حتى صدور الإنجاز النهائي.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-sack-dollar"></i></span>
+    <div class="service-title">تصفير الزكاة</div>
+    <p>إعداد القوائم المالية وتصفير الزكاة للشركات مع استخراج الشهادة.</p>
+</div>
+
+<div class="service-item">
+    <span class="service-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+    <div class="service-title">تخفيض مخالفات العمل</div>
+    <p>الاعتراض على مخالفات وزارة الموارد البشرية وتخفيض قيمتها.</p>
+</div>
+
+<h2 class="services-section-title">قالوا عن مكتبنا</h2>
+<div class="testimonial-box">
+    <p>"تعامل احترافي وإنجاز في وقت قياسي، أنصح الجميع بمكتب أبو عبدالله."</p>
+    <strong>- أحد العملاء</strong>
+</div>
+<div class="container">
+    <p style="text-align: center; margin-bottom: 30px;">املأ البيانات أدناه، وسننتقل بك مباشرة إلى واتساب لإرسال استفسارك:</p>
+    
+    <form id="whatsappForm">
+        <div class="form-group">
+            <label>الاسم الكريم</label>
+            <input type="text" id="name" placeholder="اكتب اسمك هنا" required>
+        </div>
+        <div class="form-group">
+            <label>رقم الجوال</label>
+            <input type="tel" id="phone" placeholder="9665xxxxxxxx" required>
+        </div>
+        <div class="form-group">
+            <label>نوع الخدمة المطلوبة</label>
+            <select id="service" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px;">
+                <option value="تأشيرات">تأشيرات</option>
+                <option value="إلغاء بلاغ هروب">إلغاء بلاغ هروب</option>
+                <option value="نقل كفالة">نقل كفالة</option>
+                <option value="تصفير زكاة">تصفير زكاة</option>
+                <option value="أخرى">أخرى</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>نص الاستفسار</label>
+            <textarea id="message" rows="4" placeholder="كيف يمكننا مساعدتك؟" required></textarea>
+        </div>
+        <button type="button" class="submit-btn" onclick="sendToWhatsApp()">إرسال الاستفسار عبر واتساب 📱</button>
+    </form>
+</div>
+
+<script>
+    function sendToWhatsApp() {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value;
+        
+        // رقم الواتساب الخاص بك
+        const ownerNumber = "966555832509";
+        
+        // صياغة الرسالة
+        const whatsappMessage = `*رسالة جديدة من موقع مكتب إنجاز*%0A%0A` +
+                                `*الاسم:* ${name}%0A` +
+                                `*رقم الجوال:* ${phone}%0A` +
+                                `*الخدمة المطلوبة:* ${service}%0A` +
+                                `*الاستفسار:* ${message}`;
+        
+        // رابط الواتساب
+        const url = `https://wa.me/${ownerNumber}?text=${whatsappMessage}`;
+        
+        // فتح الرابط
+        window.open(url, '_blank');
+    }
+</script>
+
+
+<style>
+.testimonial-box { background: white; padding: 20px; border-right: 5px solid #ffd700; margin: 20px auto; max-width: 600px; border-radius: 10px; font-style: italic; }
+</style>
+
+
+<footer>
+    <div style="margin-bottom: 20px;">
+        <h4 style="color: #ffd700; margin-bottom: 15px;">روابط سريعة</h4>
+        <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html#services">خدماتنا</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+    </div>
+    <p>نخدمكم في كافة أنحاء المملكة العربية السعودية 🇸🇦</p>
+    <p>جميع الحقوق محفوظة &copy; 2026 | مكتب إنجاز أبو عبدالله</p>
+</footer>
+
+
+<script>
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        const isOpen = content.style.maxHeight;
+        
+        // إغلاق أي أكورديون مفتوح (اختياري)
+        document.querySelectorAll('.accordion-content').forEach(item => item.style.maxHeight = null);
+        
+        if (!isOpen) {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    }
+</script>
+<a href="https://wa.me/966555832509" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<style>
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25d366;
+    border-radius: 50px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+.whatsapp-float img { width: 30px; height: 30px; display: block; }
+.whatsapp-float:hover { transform: scale(1.1); }
+.whatsapp-float {
+    animation: shadow-pulse 2s infinite;
+}
+@keyframes shadow-pulse {
+    0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.4); }
+    100% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+}
+.whatsapp-btn {
+    animation: shadow-pulse 2s infinite;
+}
+@keyframes shadow-pulse {
+    0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.4); }
+    100% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
+}
+
+</style>
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="topBtn">⬆</button>
+<style>
+#topBtn { position: fixed; bottom: 80px; right: 20px; background: #004d00 ; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; }
+</style>
+
+</body>
+</html>

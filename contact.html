@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        تواصل معنا | مكتب انجاز ابو عبدالله
+</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root { --primary-color: #1a5d1a; --accent-gold: #d4af37; --bg-light: #f0f2f5; --text-main: #2c3e50; }
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-light); color: var(--text-main); margin: 0; line-height: 1.7; }
+
+        /* الهيدر */
+        header { background-image: url('samo.png'); background-size: cover; background-position: center; color: white; text-align: center; padding: 60px 20px; position: relative; clip-path: ellipse(120% 100% at 50% 0%); }
+        header::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; }
+        header h1 { position: relative; z-index: 2; font-weight: 800; margin: 0; }
+
+        .container { max-width: 600px; margin: 40px auto; padding: 30px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+
+        /* النموذج */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--primary-color); }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-family: inherit; }
+        .submit-btn { width: 100%; padding: 15px; background: var(--primary-color); color: white; border: none; border-radius: 10px; font-weight: 800; cursor: pointer; transition: 0.3s; font-size: 1.1rem; }
+        .submit-btn:hover { background: #134613; transform: translateY(-2px); }
+
+        /* معلومات التواصل */
+        .contact-info { text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; }
+        .contact-info a { color: var(--primary-color); font-weight: 700; text-decoration: none; font-size: 1.2rem; display: block; margin: 10px 0; }
+
+        footer { background-color: #004d00; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 50px; border-top-left-radius: 50px; border-top-right-radius: 50px; }
+        footer a { color: #ffd700 !important; text-decoration: none; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>تواصل معنا</h1>
+</header>
+
+<div class="container">
+    <p style="text-align: center; margin-bottom: 30px;">املأ البيانات أدناه، وسننتقل بك مباشرة إلى واتساب لإرسال استفسارك:</p>
+    
+    <form id="whatsappForm">
+        <div class="form-group">
+            <label>الاسم الكريم</label>
+            <input type="text" id="name" placeholder="اكتب اسمك هنا" required>
+        </div>
+        <div class="form-group">
+            <label>رقم الجوال</label>
+            <input type="tel" id="phone" placeholder="9665xxxxxxxx" required>
+        </div>
+        <div class="form-group">
+            <label>نوع الخدمة المطلوبة</label>
+            <select id="service" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 10px;">
+                <option value="تأشيرات">تأشيرات</option>
+                <option value="إلغاء بلاغ هروب">إلغاء بلاغ هروب</option>
+                <option value="نقل كفالة">نقل كفالة</option>
+                <option value="تصفير زكاة">تصفير زكاة</option>
+                <option value="أخرى">أخرى</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>نص الاستفسار</label>
+            <textarea id="message" rows="4" placeholder="كيف يمكننا مساعدتك؟" required></textarea>
+        </div>
+        <button type="button" class="submit-btn" onclick="sendToWhatsApp()">إرسال الاستفسار عبر واتساب 📱</button>
+    </form>
+</div>
+
+
+
+<footer>
+    <div style="margin-bottom: 20px;">
+        <h4 style="color: #ffd700; margin-bottom: 15px;">روابط سريعة</h4>
+        <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html#services">خدماتنا</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+    </div>
+    <p>نخدمكم في كافة أنحاء المملكة العربية السعودية 🇸🇦</p>
+    <p>جميع الحقوق محفوظة &copy; 2026 | مكتب إنجاز أبو عبدالله</p>
+</footer>
+
+<script>
+    function sendToWhatsApp() {
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
+        const message = document.getElementById('message').value;
+        
+        // رقم الواتساب الخاص بك
+        const ownerNumber = "966555832509";
+        
+        // صياغة الرسالة
+        const whatsappMessage = `*رسالة جديدة من موقع مكتب إنجاز*%0A%0A` +
+                                `*الاسم:* ${name}%0A` +
+                                `*رقم الجوال:* ${phone}%0A` +
+                                `*الخدمة المطلوبة:* ${service}%0A` +
+                                `*الاستفسار:* ${message}`;
+        
+        // رابط الواتساب
+        const url = `https://wa.me/${ownerNumber}?text=${whatsappMessage}`;
+        
+        // فتح الرابط
+        window.open(url, '_blank');
+    }
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الأسئلة الشائعة | مكتب انجاز ابو عبدالله</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5d1a;
+            --primary-gradient: linear-gradient(135deg, #1a5d1a 0%, #2d8a2d 100%);
+            --accent-gold: #d4af37;
+            --white: #ffffff;
+            --bg-light: #f0f2f5;
+            --text-main: #2c3e50;
+        }
+
+        body { font-family: 'Tajawal', sans-serif; background-color: var(--bg-light); color: var(--text-main); margin: 0; line-height: 1.7; }
+        
+        /* الهيدر */
+        header { background-image: url('samo.png'); background-size: cover; background-position: center; color: white; text-align: center; padding: 60px 20px; position: relative; clip-path: ellipse(120% 100% at 50% 0%); }
+        header::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; }
+        header h1, header p { position: relative; z-index: 2; margin: 0; }
+        header h1 { font-weight: 800; font-size: 2.2rem; }
+
+        .container { max-width: 850px; margin: 20px auto; padding: 0 20px; }
+
+        /* تنسيق الأكورديون */
+        .faq-section { margin-top: 40px; }
+        .accordion-item { background: white; margin-bottom: 15px; border-radius: 12px; border: 1px solid #ddd; overflow: hidden; transition: 0.3s; }
+        .accordion-header { padding: 20px; cursor: pointer; font-weight: 700; color: var(--primary-color); display: flex; justify-content: space-between; align-items: center; background: #fafafa; }
+        .accordion-content { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; color: #555; }
+        .accordion-content p { padding-bottom: 15px; }
+
+        /* الفوتر */
+        footer { background-color: #004d00; color: #ffffff; text-align: center; padding: 40px 20px; margin-top: 50px; border-top-left-radius: 50px; border-top-right-radius: 50px; }
+        footer a { color: #ffd700 !important; text-decoration: none; font-weight: 700; }
+
+        /* زر الواتساب العائم */
+        .whatsapp-float { position: fixed; bottom: 25px; left: 25px; background-color: #25d366; border-radius: 50px; padding: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; animation: shadow-pulse 2s infinite; }
+        .whatsapp-float img { width: 35px; height: 35px; display: block; }
+        
+        @keyframes shadow-pulse { 0% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.4); } 100% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } }
+    </style>
+</head>
+<body>
+
+<header>
+    
+    <h1>🇸🇦 الأسئلة الشائعة</h1>
+    <p>مكتب إنجاز - أبو عبدالله | هنا تجد إجابات لجميع استفساراتك</p>
+</header>
+
+<div class="container">
+    <div class="faq-section">
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">متى يتم دفع رسوم الخدمات؟ <span><i class="fas fa-chevron-down"></i></span></div>
+            <div class="accordion-content"><p>سياستنا قائمة على الثقة؛ نحن لا نطلب أي مبالغ مالية إلا بعد التأكد من إتمام المعاملة بنجاح وإنجاز طلبك.</p></div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">هل يمكنني التواصل معكم من خارج مدينتي؟ <span><i class="fas fa-chevron-down"></i></span></div>
+            <div class="accordion-content"><p>بالطبع، نحن نخدم عملاءنا في كافة مناطق المملكة العربية السعودية رقمياً عبر المنصات الحكومية المعتمدة.</p></div>
+        </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">ما مدى خصوصية بياناتي؟ <span><i class="fas fa-chevron-down"></i></span></div>
+            <div class="accordion-content"><p>نلتزم بأعلى معايير السرية والأمان في التعامل مع وثائق وبيانات عملائنا، ولا يتم مشاركتها مع أي جهة خارجية.</p></div>
+        </div>
+        
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">كم تستغرق فترة الإنجاز؟ <span><i class="fas fa-chevron-down"></i></span></div>
+            <div class="accordion-content"><p>تختلف المدة بناءً على نوع المعاملة، ولكن نعدك بالعمل بأقصى سرعة ممكنة وباحترافية عالية لإنهاء طلبك.</p></div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div style="margin-bottom: 20px;">
+        <h4 style="color: #ffd700; margin-bottom: 15px;">روابط سريعة</h4>
+        <ul style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="index.html#services">خدماتنا</a></li>
+            <li><a href="faq.html">الأسئلة الشائعة</a></li>
+            <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
+            <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+    </div>
+    <p>نخدمكم في كافة أنحاء المملكة العربية السعودية 🇸🇦</p>
+    <p>جميع الحقوق محفوظة &copy; 2026 | مكتب إنجاز أبو عبدالله</p>
+</footer>
+
+
+
+<a href="https://wa.me/966555832509" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
+
+<script>
+    function toggleAccordion(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector('i');
+        
+        // إغلاق الباقي
+        document.querySelectorAll('.accordion-content').forEach(item => {
+            if(item !== content) item.style.maxHeight = null;
+        });
+        
+        // تبديل الحالي
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+            icon.style.transform = "rotate(0deg)";
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+            icon.style.transform = "rotate(180deg)";
+        }
+    }
+</script>
+
+</body>
+</html>
+
